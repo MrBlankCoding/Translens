@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quick Translator</title>
+  <style>
+    body {
+      width: 320px;
+      padding: 16px;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    
+    h3 {
+      margin: 0 0 16px 0;
+      color: #1a73e8;
+    }
+    
+    .language-select {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    select {
+      width: 100%;
+      padding: 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+    
+    label {
+      font-weight: 500;
+      color: #5f6368;
+    }
+    
+    .settings {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    .switch {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .instructions {
+      background: #f8f9fa;
+      padding: 12px;
+      border-radius: 4px;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    
+    .instructions p {
+      margin: 4px 0;
+    }
+    
+    .keyboard-shortcut {
+      background: #e8eaed;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h3>Quick Translator</h3>
+    
+    <div class="language-select">
+      <label for="targetLang">Target Language:</label>
+      <select id="targetLang">
+        <!-- Options will be populated dynamically -->
+      </select>
+    </div>
+
+    <div class="settings">
+      <div class="switch">
+        <input type="checkbox" id="autoTranslate">
+        <label for="autoTranslate">Auto-translate pages</label>
+      </div>
+      
+      <div class="switch">
+        <input type="checkbox" id="showNotifications">
+        <label for="showNotifications">Show notifications</label>
+      </div>
+    </div>
+
+    <div class="instructions">
+      <p><strong>How to use:</strong></p>
+      <p>1. Select text you want to translate</p>
+      <p>2. Right-click and select "Translate Selection" or press <span class="keyboard-shortcut">Alt+T</span></p>
+      <p>3. Hover over translated text to see original</p>
+      <p>4. Double-click to revert to original text</p>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

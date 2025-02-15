@@ -1,0 +1,44 @@
+{
+    "manifest_version": 3,
+    "name": "Quick Translator",
+    "version": "1.0",
+    "description": "Instantly translate text on any webpage with right-click or keyboard shortcut",
+    "permissions": [
+      "contextMenus",
+      "storage",
+      "scripting",
+      "notifications",
+      "activeTab"
+    ],
+    "host_permissions": [
+      "https://translate.googleapis.com/*"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [{
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "icons/icon16.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+      }
+    },
+    "icons": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "commands": {
+      "translate-selection": {
+        "suggested_key": {
+          "default": "Alt+T"
+        },
+        "description": "Translate selected text"
+      }
+    }
+  }
